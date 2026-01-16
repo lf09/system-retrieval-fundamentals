@@ -2,6 +2,7 @@ import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+nltk.download("stopwords")
 
 documents = [
     "Machine learning é um campo da inteligência artificial que permite que computadores aprendam padrões a partir de dados.",
@@ -17,6 +18,7 @@ documents = [
     "Mais do que encontrar padrões, o machine learning ajuda a tomar decisões baseadas em evidências muito claras.",
 ]
 
+stop_words = set(nltk.corpus.stopwords.words("portuguese"))
 
 def preprocess(text):
     text_lower = text.lower()
